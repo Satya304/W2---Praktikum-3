@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengubah Warna Latar Belakang</title>
+</head>
+<body>
+
+    <h1>Pengubah Warna Latar Belakang - T5_075</h1>
+    <button id="btnWarna">Ubah Warna</button>
+    <p id="kodeWarna">Warna saat ini: putih</p>
+
+    <script>
+        const tombol = document.getElementById('btnWarna');
+        const kodeWarna = document.getElementById('kodeWarna');
+
+        function warnaAcak() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        tombol.addEventListener('click', () => {
+            const warna = warnaAcak();
+            document.body.style.backgroundColor = warna;
+            kodeWarna.textContent = `Warna saat ini: ${warna}`;
+        });
+    </script>
+
+</body>
+</html>
